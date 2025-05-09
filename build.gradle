@@ -50,5 +50,16 @@ tasks.withType(Test) {
         }
     }
 
+}
+task smoke(type: Test) {
+    useJUnitPlatform {
+        includeTags("Smoke")
 
+    }
+}
+task all(type: Test) {
+    useJUnitPlatform {
+        includeTags("All")
+
+    }
 }
