@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+
+}
+
+group = 'org.kirvel'
+version = '1.0-SNAPSHOT'
+allure {
+    allureReport {
+        version.set("2.25.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        aspectjVersion.set("1.9.21")
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.25.0")
+            }
+        }
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter",
+            'org.slf4j:slf4j-simple:2.0.12',
+            "com.codeborne:selenide:6.19.1",
+            "org.junit.jupiter:junit-jupiter:5.10.3",
+            "io.qameta.allure:allure-selenide:2.25.0",
+            'org.aeonbits.owner:owner:1.0.12'
+
+
+    )
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+    testLogging {
+        lifecycle {
+            events "started","skipped","failed","standard_error","standard_out"
+            exceptionFormat "short"
+        }
+    }
+
+//    task smoke(type: Test) {
+//        useJUnitPlatform {
+//            includeTags("Smoke")
+//
+//        }
+//    }
+//    task all(type: Test) {
+//        useJUnitPlatform {
+//            includeTags("All")
+//
+//        }
+//    }
+//    task test(type: Test) {
+//        useJUnitPlatform {
+//        }
+//}
+}
