@@ -9,7 +9,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -35,11 +34,10 @@ public class TestBase {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
 
 
     }
+
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
