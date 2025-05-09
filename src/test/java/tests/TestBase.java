@@ -36,6 +36,8 @@ public class TestBase {
                 "enableVideo", true
         ));
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-dev-shm-usage"); // решает проблему с /dev/shm
+        chromeOptions.addArguments("--no-sandbox");
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("intl.accept_languages", "en");
         chromeOptions.setExperimentalOption("prefs", prefs);
