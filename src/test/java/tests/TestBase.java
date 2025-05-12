@@ -18,12 +18,15 @@ import java.util.Map;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class);
+        WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
         Configuration.browser = webDriverConfig.browserName();
         Configuration.browserSize = webDriverConfig.browserSize();
         Configuration.browserVersion = webDriverConfig.browserVersion();
-        Configuration.remote = webDriverConfig.remoteUrl();
+        String remoteUrl = System.getProperty("remote");
+        if (remoteUrl != null) {
+            Configuration.remote = remoteUrl;
+        } else Configuration.remote = webDriverConfig.remoteUrl();
         Configuration.baseUrl = "https://testengineer.ru";
         Configuration.pageLoadStrategy = "eager";
 
