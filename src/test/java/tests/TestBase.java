@@ -9,10 +9,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class TestBase {
@@ -52,6 +50,7 @@ public class TestBase {
 
         Configuration.pageLoadStrategy = "eager";
 
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -60,19 +59,10 @@ public class TestBase {
                 "enableVNC", true,
                 "enableVideo", true
         ));
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-dev-shm-usage"); // решает проблему с /dev/shm
-        chromeOptions.addArguments("--no-sandbox");
-        Map<String, Object> prefs = new HashMap<>();
-        prefs.put("intl.accept_languages", "en");
-        chromeOptions.setExperimentalOption("prefs", prefs);
-        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
         Configuration.browserCapabilities = capabilities;
 
-
     }
-
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
