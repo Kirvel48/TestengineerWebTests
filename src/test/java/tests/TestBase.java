@@ -20,14 +20,36 @@ public class TestBase {
     static void beforeAll() {
         WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
-        Configuration.browser = webDriverConfig.browserName();
-        Configuration.browserSize = webDriverConfig.browserSize();
-        Configuration.browserVersion = webDriverConfig.browserVersion();
+        String browserSize = System.getProperty("browserSize");
+        if (browserSize != null) {
+            Configuration.browserSize = browserSize;
+        } else
+            Configuration.browserSize = webDriverConfig.browserSize();
+        String browserVersion = System.getProperty("browserVersion");
+        if (browserVersion != null) {
+            Configuration.browserVersion = browserVersion;
+        } else
+            Configuration.browserVersion = webDriverConfig.browserVersion();
+
+        String browser = System.getProperty("browser");
+        if (browser != null) {
+            Configuration.browser = browser;
+        } else
+            Configuration.browser = webDriverConfig.browserName();
+
         String remoteUrl = System.getProperty("remote");
         if (remoteUrl != null) {
             Configuration.remote = remoteUrl;
-        } else Configuration.remote = webDriverConfig.remoteUrl();
-        Configuration.baseUrl = "https://testengineer.ru";
+        } else
+            Configuration.remote = webDriverConfig.remoteUrl();
+
+        String baseUrl = System.getProperty("baseUrl");
+        if (baseUrl != null) {
+            Configuration.baseUrl = baseUrl;
+        } else {
+            Configuration.baseUrl = "https://testengineer.ru";
+        }
+
         Configuration.pageLoadStrategy = "eager";
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());

@@ -40,17 +40,21 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
     systemProperties(System.getProperties())
+
+
+
     testLogging {
         lifecycle {
-            events "started", "skipped", "failed", "standard_error", "standard_out"
+            events "started", "skipped", "failed", "standard_error",
+                    "standard_out"
             exceptionFormat "short"
         }
     }
-
 }
+
 task smoke(type: Test) {
     useJUnitPlatform {
         includeTags("Smoke")
