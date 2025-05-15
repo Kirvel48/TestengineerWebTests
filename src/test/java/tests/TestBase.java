@@ -23,6 +23,7 @@ public class TestBase {
             Configuration.browserSize = browserSize;
         } else
             Configuration.browserSize = webDriverConfig.browserSize();
+
         String browserVersion = System.getProperty("browserVersion");
         if (browserVersion != null) {
             Configuration.browserVersion = browserVersion;
