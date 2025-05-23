@@ -14,12 +14,12 @@ import static io.qameta.allure.Allure.step;
 @Epic("Страница статьи")
 @Feature("UI|Страница статьи")
 @DisplayName("Тесты на отображение страницы статьи")
+@Tag("All")
 public class NewsPageTests extends TestBase {
     NewsPage newsPage = new NewsPage();
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Tag("All")
     @DisplayName("Отображение логотипа статьи во весь экран")
     void openPicNewsPageTest() {
         step("Open page", () -> newsPage.openNewsPage());

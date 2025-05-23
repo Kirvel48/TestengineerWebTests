@@ -15,6 +15,7 @@ import static io.qameta.allure.Allure.step;
 @Epic("Главная страница")
 @Feature("UI|Главная страница")
 @DisplayName("Тесты на отображение главной страницы")
+@Tag("All")
 public class MainPageTests extends TestBase {
     MainPage mainPage = new MainPage();
     NewsPage newsPage = new NewsPage();
@@ -31,7 +32,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Tag("All")
     @DisplayName("Переход на вторую страницу поиска")
     void searchResultPaginationTest() {
 
@@ -65,7 +65,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Tag("All")
     @DisplayName("Количество статей на странцие поисковой выдачи")
     void searchResultSizeTest() {
 
