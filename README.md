@@ -108,19 +108,39 @@ ___
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/allure-dashboard.png" width="850">  
+<img title="Allure Overview Dashboard" src="media/screenshot/AllureMain.jpg" width="850">  
 </p>  
 
 ### *Тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="images/screen/allure-test-cases.png" width="850">  
+<img title="Allure Tests" src="media/screenshot/AllureTests.jpg" width="850">  
 </p>
 
 ### *Графики*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/allure-report-graphs.png" width="850">
+<img title="Allure Graphics" src="media/screenshot/AllureGraphs.jpg" width="850">
 
-<img title="Allure Graphics" src="images/screen/allure-report-graphs2.png" width="850">  
+___
+<a id="allure-testops"></a>
+## <img alt="Allure" height="25" src="media/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4757/dashboards">Allure TestOps</a>
+____
+### *Allure TestOps Dashboard*
+
+<p align="center">  
+<img title="Allure TestOps Dashboard" src="media/screenshot/TestOpsGraphs.jpg" width="850">  
+</p>  
+
+### *Ручные тест-кейсы*
+
+<p align="center">  
+<img title="Allure Tests" src="images/screen/manual-test-cases.png" width="850">  
 </p>
+
+### *Авто тест-кейсы*
+
+<p align="center">  
+<img title="Allure TestOps Tests" src="media/screenshot/TestOpsTests.jpg" width="850">  
+</p>
+
