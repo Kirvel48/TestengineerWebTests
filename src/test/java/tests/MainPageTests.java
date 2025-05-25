@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -23,6 +20,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Smoke")
+    @Owner("Tetushkin K.I.")
     @DisplayName("Отображение результата поиска")
     void searchResultPositiveTest() {
         step("Open main page", () -> mainPage.openPage());
@@ -32,6 +30,7 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
+    @Owner("Tetushkin K.I.")
     @DisplayName("Переход на вторую страницу поиска")
     void searchResultPaginationTest() {
 
@@ -44,6 +43,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Tag("Smoke")
+    @Owner("Tetushkin K.I.")
     @DisplayName("Переход на статью из поисковой выдачи")
     void searchResultOpenNewsTest() {
         step("Open main page", () -> mainPage.openPage());
@@ -55,6 +55,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Smoke")
+    @Owner("Tetushkin K.I.")
     @DisplayName("Переход на страницу новостей из бокового меню")
     void openNewsPageTest() {
         step("Open main page", () -> mainPage.openPage());
@@ -65,6 +66,7 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
+    @Owner("Tetushkin K.I.")
     @DisplayName("Количество статей на странцие поисковой выдачи")
     void searchResultSizeTest() {
 
