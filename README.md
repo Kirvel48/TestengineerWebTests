@@ -149,5 +149,5 @@ ____
 ## Примеры видео выполнения тестов на Selenoid
 ____
 <p align="center">
-<img title="Selenoid Video" src="media/video/selenoid.mp4" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="media/video/6ddf3e211058949376786aad355d77e9.gif" width="550" height="350"  alt="video">   
 </p>
