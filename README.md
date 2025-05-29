@@ -21,8 +21,6 @@ ____
 
 * <a href="#allure-testops">Интеграция с Allure TestOps</a>
 
-* <a href="#jira">Интеграция с Jira</a>
-
 * <a href="#telegram">Уведомление в Telegram при помощи бота</a>
 
 * <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
@@ -41,7 +39,6 @@ ____
 <a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="media/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a> 
 <a href="https://qameta.io/"><img src="media/logo/Allure2.svg" width="50" height="50"  alt="Allure TestOps"/></a>   
 <a href="https://www.jenkins.io/"><img src="media/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
-<a href="https://www.atlassian.com/ru/software/jira/"><img src="media/logo/Jira.svg" width="50" height="50"  alt="Jira"/></a>  
 </p>
 
 Тесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования <code>Selenide</code>, сборщик - <code>Gradle</code>.
@@ -50,7 +47,7 @@ ____
 При прогоне тестов для удаленного запуска используется <code>Selenoid</code>.
 
 Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота.
-Также реализована интеграция с <code>Allure TestOps</code> и <code>Jira</code>.
+Также реализована интеграция с <code>Allure TestOps</code>
 ____
 
 <a id="cases"></a>
@@ -124,7 +121,7 @@ ___
 
 ___
 <a id="allure-testops"></a>
-## <img alt="Allure" height="25" src="media/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4757/dashboards">Allure TestOps</a>
+## Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4757/dashboards">Allure TestOps</a>
 ____
 ### *Allure TestOps Dashboard*
 
@@ -132,11 +129,6 @@ ____
 <img title="Allure TestOps Dashboard" src="media/screenshot/TestOpsGraphs.jpg" width="850">  
 </p>  
 
-### *Ручные тест-кейсы*
-
-<p align="center">  
-<img title="Allure Tests" src="images/screen/manual-test-cases.png" width="850">  
-</p>
 
 ### *Авто тест-кейсы*
 
@@ -144,3 +136,18 @@ ____
 <img title="Allure TestOps Tests" src="media/screenshot/TestOpsTests.jpg" width="850">  
 </p>
 
+____
+<a id="telegram"></a>
+## Уведомление в Telegram при помощи бота
+____
+<p align="center">  
+<img title="Telegram" src="media/screenshot/Telegram.jpg" width="550">  
+</p>
+
+____
+<a id="video"></a>
+## Примеры видео выполнения тестов на Selenoid
+____
+<p align="center">
+<img title="Selenoid Video" src="media/video/selenoid.mp4" width="550" height="350"  alt="video">   
+</p>
