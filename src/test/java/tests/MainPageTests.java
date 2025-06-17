@@ -24,8 +24,8 @@ public class MainPageTests extends TestBase {
     @DisplayName("Отображение результата поиска")
     void searchResultPositiveTest() {
         step("Open main page", () -> mainPage.openPage());
-       step("Set search request", () -> mainPage.setValueSearchInput("Java"));
-        step("Check search result" ,() -> mainPage.checkValueHeaderModule("Java"));
+        step("Set search request", () -> mainPage.setValueSearchInput("Java"));
+        step("Check search result", () -> mainPage.checkValueHeaderModule("Java"));
     }
 
     @Test
@@ -36,8 +36,8 @@ public class MainPageTests extends TestBase {
 
         step("Open main page", () -> mainPage.openPage());
         step("Set search request", () -> mainPage.setValueSearchInput("Java"));
-        step("Click pagination button" ,() ->mainPage.paginationButtonClick("2"));
-        step("Check result" ,() ->mainPage.checkValueHeaderModule("Java"));
+        step("Click pagination button", () -> mainPage.paginationButtonClick("2"));
+        step("Check result", () -> mainPage.checkValueHeaderModule("Java"));
     }
 
     @Test
@@ -48,8 +48,8 @@ public class MainPageTests extends TestBase {
     void searchResultOpenNewsTest() {
         step("Open main page", () -> mainPage.openPage());
         step("Set search request", () -> mainPage.setValueSearchInput("Новые функции Java для автоматизаторов"));
-        step("Click news button",() ->mainPage.newsButtonClick());
-        step("Check search result" ,() -> newsPage.checkValueHeaderNewsModule("Новые функции Java для автоматизаторов"));
+        step("Click news button", () -> mainPage.newsButtonClick());
+        step("Check search result", () -> newsPage.checkValueHeaderNewsModule("Новые функции Java для автоматизаторов"));
     }
 
     @Test
@@ -59,8 +59,8 @@ public class MainPageTests extends TestBase {
     @DisplayName("Переход на страницу новостей из бокового меню")
     void openNewsPageTest() {
         step("Open main page", () -> mainPage.openPage());
-        step("Click news button in block menu",() -> mainPage.newsButtonBlockMenuClick());
-        step("Check URL page" ,() ->mainPage.checkUrlPage("https://testengineer.ru/category/testing-news/"));
+        step("Click news button in block menu", () -> mainPage.newsButtonBlockMenuClick());
+        step("Check URL page", () -> mainPage.checkUrlPage("https://testengineer.ru/category/testing-news/"));
 
     }
 
@@ -72,7 +72,7 @@ public class MainPageTests extends TestBase {
 
         step("Open main page", () -> mainPage.openPage());
         step("Set search request", () -> mainPage.setValueSearchInput("Java"));
-        step("Check result size" ,() -> mainPage.checkNewsPageCollectionsSize(10));
+        step("Check result size", () -> mainPage.checkNewsPageCollectionsSize(10));
 
     }
 
