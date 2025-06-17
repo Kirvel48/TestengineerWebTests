@@ -56,9 +56,6 @@ public class MainPage {
     }
 
     public MainPage checkNewsPageCollectionsSize(Integer value) {
-        if (value == null) {
-            throw new IllegalArgumentException("Value cannot be null");
-        }
         newsCollection.shouldHave(CollectionCondition.size(value));
         return this;
     }
