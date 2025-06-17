@@ -9,6 +9,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -51,9 +52,6 @@ public class TestBase {
 
         Configuration.pageLoadStrategy = "eager";
 
-
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -62,7 +60,11 @@ public class TestBase {
         ));
 
         Configuration.browserCapabilities = capabilities;
+    }
 
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterEach
