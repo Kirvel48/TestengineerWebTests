@@ -15,8 +15,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBase {
+
+
     @BeforeAll
-    static void beforeAll() {
+    static void getProperties() {
         WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
         String browserSize = System.getProperty("browserSize");
