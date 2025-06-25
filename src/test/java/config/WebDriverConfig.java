@@ -11,19 +11,19 @@ import org.aeonbits.owner.Config;
 })
 
 public interface WebDriverConfig extends Config {
-    @Key("browser_name")
+    @Key("browserName")
     @DefaultValue("chrome")
     String browserName();
 
     @DefaultValue("1920x1080")
-    @Key("browser_size")
+    @Key("browserSize")
     String browserSize();
 
     @DefaultValue("128.0")
-    @Key("browser_version")
+    @Key("browserVersion")
     String browserVersion();
 
-    @Key("remote_browser")
+    @Key("remoteUrl")
     String remoteUrl();
 }
 
