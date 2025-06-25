@@ -2,8 +2,13 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:config/${env}.properties",
-        "classpath:config/local.properties"})
+@Config.LoadPolicy(Config.LoadType.MERGE)
+
+@Config.Sources({
+        "system:properties",
+        "classpath:config/${env}.properties"
+
+})
 
 public interface WebDriverConfig extends Config {
     @Key("browser_name")
